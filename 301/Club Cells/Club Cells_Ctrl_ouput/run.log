@@ -1,0 +1,50 @@
+=== 2026-03-24T12:43:55.301697 ===
+input: /data2/zengjh/301/Club Cells/Club Cells/Club Cells_Ctrl.h5ad
+output_dir: /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput
+command: /data2/zengjh/conda/envs/cell/bin/python /data2/zengjh/301/run_se_pca.py --state-root /data2/zengjh/301/state-main --input /data2/zengjh/301/Club Cells/Club Cells/Club Cells_Ctrl.h5ad --output-dir /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput --checkpoint /data2/zengjh/301/se600m_epoch4.ckpt --model-folder /data2/zengjh/301 --protein-embeddings /data2/zengjh/301/protein_embeddings.pt
+
+读取 /data2/zengjh/301/Club Cells/Club Cells/Club Cells_Ctrl.h5ad ...
+Running: /data2/zengjh/conda/envs/cell/bin/python -m state emb transform --input /tmp/se_emb_26vifxpf/Club Cells_Ctrl_prep_emb.h5ad --output /tmp/se_emb_26vifxpf/Club Cells_Ctrl_emb_out.h5ad --embed-key X_state --checkpoint /data2/zengjh/301/se600m_epoch4.ckpt --model-folder /data2/zengjh/301 --protein-embeddings /data2/zengjh/301/protein_embeddings.pt
+INFO:state._cli._emb._transform:Using model checkpoint: /data2/zengjh/301/se600m_epoch4.ckpt
+INFO:state._cli._emb._transform:Creating inference object
+INFO:state._cli._emb._transform:Using protein embeddings override: /data2/zengjh/301/protein_embeddings.pt
+INFO:state._cli._emb._transform:Loading model from checkpoint: /data2/zengjh/301/se600m_epoch4.ckpt
+INFO:state._cli._emb._transform:Created output directory: /tmp/se_emb_26vifxpf
+INFO:state._cli._emb._transform:Computing embeddings for /tmp/se_emb_26vifxpf/Club Cells_Ctrl_prep_emb.h5ad
+INFO:state._cli._emb._transform:Output will be saved to /tmp/se_emb_26vifxpf/Club Cells_Ctrl_emb_out.h5ad
+INFO:state.emb.inference:Auto-detected gene column: var.index (overlap: 908/19790 protein embeddings, 100.0% of genes)
+INFO:/data2/zengjh/301/state-main/src/state/emb/data/loader.py:908 genes mapped to embedding file (out of 908)
+!!! 908 genes mapped to embedding file (out of 908)
+
+Encoding:   0%|          | 0/3 [00:00<?, ?it/s]
+Encoding:  33%|███▎      | 1/3 [00:01<00:02,  1.37s/it]
+Encoding:  67%|██████▋   | 2/3 [00:01<00:00,  1.20it/s]
+Encoding: 100%|██████████| 3/3 [00:02<00:00,  1.66it/s]
+Encoding: 100%|██████████| 3/3 [00:02<00:00,  1.39it/s]
+INFO:state._cli._emb._transform:Embedding computation completed successfully!
+已写 /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput/Club Cells_Ctrl_after_se.h5ad
+已写 /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput/Club Cells_Ctrl_01_hvgPCA_PC12_Batch.png
+2026-03-24 12:48:23,613 - harmonypy - INFO - Running Harmony (PyTorch on cuda)
+2026-03-24 12:48:23,613 - harmonypy - INFO -   Parameters:
+2026-03-24 12:48:23,613 - harmonypy - INFO -     max_iter_harmony: 20
+2026-03-24 12:48:23,613 - harmonypy - INFO -     max_iter_kmeans: 20
+2026-03-24 12:48:23,613 - harmonypy - INFO -     epsilon_cluster: 1e-05
+2026-03-24 12:48:23,613 - harmonypy - INFO -     epsilon_harmony: 0.0001
+2026-03-24 12:48:23,614 - harmonypy - INFO -     nclust: 2
+2026-03-24 12:48:23,614 - harmonypy - INFO -     block_size: 0.05
+2026-03-24 12:48:23,614 - harmonypy - INFO -     lamb: [1. 1.]
+2026-03-24 12:48:23,614 - harmonypy - INFO -     theta: [2. 2.]
+2026-03-24 12:48:23,614 - harmonypy - INFO -     sigma: [0.1 0.1]
+2026-03-24 12:48:23,614 - harmonypy - INFO -     verbose: True
+2026-03-24 12:48:23,614 - harmonypy - INFO -     random_state: 0
+2026-03-24 12:48:23,614 - harmonypy - INFO -   Data: 50 PCs × 65 cells
+2026-03-24 12:48:23,614 - harmonypy - INFO -   Batch variables: ['Batch']
+2026-03-24 12:48:24,032 - harmonypy - INFO - Computing initial centroids with sklearn.KMeans...
+2026-03-24 12:48:24,072 - harmonypy - INFO - KMeans initialization complete.
+2026-03-24 12:48:24,294 - harmonypy - INFO - Iteration 1 of 20
+2026-03-24 12:48:24,553 - harmonypy - INFO - Iteration 2 of 20
+2026-03-24 12:48:24,744 - harmonypy - INFO - Iteration 3 of 20
+2026-03-24 12:48:24,823 - harmonypy - INFO - Converged after 3 iterations
+已写 /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput/Club Cells_Ctrl_02_state_PC12_Batch.png
+已写 /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput/Club Cells_Ctrl_03_harmony_PC12_Batch.png
+已写 /data2/zengjh/301/Club Cells/Club Cells_Ctrl_ouput/Club Cells_Ctrl_state_emb.h5ad

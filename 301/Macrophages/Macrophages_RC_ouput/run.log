@@ -1,0 +1,106 @@
+=== 2026-03-24T15:15:46.053427 ===
+input: /data2/zengjh/301/Macrophages/Macrophages/Macrophages_RC.h5ad
+output_dir: /data2/zengjh/301/Macrophages/Macrophages_RC_ouput
+command: /data2/zengjh/conda/envs/cell/bin/python /data2/zengjh/301/run_se_pca.py --state-root /data2/zengjh/301/state-main --input /data2/zengjh/301/Macrophages/Macrophages/Macrophages_RC.h5ad --output-dir /data2/zengjh/301/Macrophages/Macrophages_RC_ouput --checkpoint /data2/zengjh/301/se600m_epoch4.ckpt --model-folder /data2/zengjh/301 --protein-embeddings /data2/zengjh/301/protein_embeddings.pt
+
+读取 /data2/zengjh/301/Macrophages/Macrophages/Macrophages_RC.h5ad ...
+Running: /data2/zengjh/conda/envs/cell/bin/python -m state emb transform --input /tmp/se_emb_yi08gjxs/Macrophages_RC_prep_emb.h5ad --output /tmp/se_emb_yi08gjxs/Macrophages_RC_emb_out.h5ad --embed-key X_state --checkpoint /data2/zengjh/301/se600m_epoch4.ckpt --model-folder /data2/zengjh/301 --protein-embeddings /data2/zengjh/301/protein_embeddings.pt
+INFO:state._cli._emb._transform:Using model checkpoint: /data2/zengjh/301/se600m_epoch4.ckpt
+INFO:state._cli._emb._transform:Creating inference object
+INFO:state._cli._emb._transform:Using protein embeddings override: /data2/zengjh/301/protein_embeddings.pt
+INFO:state._cli._emb._transform:Loading model from checkpoint: /data2/zengjh/301/se600m_epoch4.ckpt
+INFO:state._cli._emb._transform:Created output directory: /tmp/se_emb_yi08gjxs
+INFO:state._cli._emb._transform:Computing embeddings for /tmp/se_emb_yi08gjxs/Macrophages_RC_prep_emb.h5ad
+INFO:state._cli._emb._transform:Output will be saved to /tmp/se_emb_yi08gjxs/Macrophages_RC_emb_out.h5ad
+INFO:state.emb.inference:Auto-detected gene column: var.index (overlap: 1597/19790 protein embeddings, 100.0% of genes)
+INFO:/data2/zengjh/301/state-main/src/state/emb/data/loader.py:1597 genes mapped to embedding file (out of 1597)
+!!! 1597 genes mapped to embedding file (out of 1597)
+
+Encoding:   0%|          | 0/57 [00:00<?, ?it/s]
+Encoding:   2%|▏         | 1/57 [00:01<01:11,  1.27s/it]
+Encoding:   4%|▎         | 2/57 [00:01<00:44,  1.25it/s]
+Encoding:   5%|▌         | 3/57 [00:02<00:34,  1.56it/s]
+Encoding:   7%|▋         | 4/57 [00:02<00:30,  1.76it/s]
+Encoding:   9%|▉         | 5/57 [00:03<00:27,  1.90it/s]
+Encoding:  11%|█         | 6/57 [00:03<00:25,  2.01it/s]
+Encoding:  12%|█▏        | 7/57 [00:03<00:24,  2.08it/s]
+Encoding:  14%|█▍        | 8/57 [00:04<00:23,  2.13it/s]
+Encoding:  16%|█▌        | 9/57 [00:04<00:22,  2.16it/s]
+Encoding:  18%|█▊        | 10/57 [00:05<00:21,  2.19it/s]
+Encoding:  19%|█▉        | 11/57 [00:05<00:20,  2.19it/s]
+Encoding:  21%|██        | 12/57 [00:06<00:20,  2.20it/s]
+Encoding:  23%|██▎       | 13/57 [00:06<00:20,  2.19it/s]
+Encoding:  25%|██▍       | 14/57 [00:07<00:21,  2.02it/s]
+Encoding:  26%|██▋       | 15/57 [00:07<00:20,  2.05it/s]
+Encoding:  28%|██▊       | 16/57 [00:08<00:19,  2.09it/s]
+Encoding:  30%|██▉       | 17/57 [00:08<00:18,  2.13it/s]
+Encoding:  32%|███▏      | 18/57 [00:09<00:18,  2.15it/s]
+Encoding:  33%|███▎      | 19/57 [00:09<00:17,  2.17it/s]
+Encoding:  35%|███▌      | 20/57 [00:10<00:16,  2.19it/s]
+Encoding:  37%|███▋      | 21/57 [00:10<00:16,  2.21it/s]
+Encoding:  39%|███▊      | 22/57 [00:10<00:15,  2.22it/s]
+Encoding:  40%|████      | 23/57 [00:11<00:15,  2.23it/s]
+Encoding:  42%|████▏     | 24/57 [00:11<00:14,  2.24it/s]
+Encoding:  44%|████▍     | 25/57 [00:12<00:14,  2.23it/s]
+Encoding:  46%|████▌     | 26/57 [00:12<00:13,  2.22it/s]
+Encoding:  47%|████▋     | 27/57 [00:13<00:13,  2.21it/s]
+Encoding:  49%|████▉     | 28/57 [00:13<00:13,  2.20it/s]
+Encoding:  51%|█████     | 29/57 [00:14<00:12,  2.20it/s]
+Encoding:  53%|█████▎    | 30/57 [00:14<00:12,  2.20it/s]
+Encoding:  54%|█████▍    | 31/57 [00:14<00:11,  2.20it/s]
+Encoding:  56%|█████▌    | 32/57 [00:15<00:11,  2.20it/s]
+Encoding:  58%|█████▊    | 33/57 [00:15<00:10,  2.21it/s]
+Encoding:  60%|█████▉    | 34/57 [00:16<00:10,  2.22it/s]
+Encoding:  61%|██████▏   | 35/57 [00:16<00:09,  2.22it/s]
+Encoding:  63%|██████▎   | 36/57 [00:17<00:09,  2.23it/s]
+Encoding:  65%|██████▍   | 37/57 [00:17<00:08,  2.24it/s]
+Encoding:  67%|██████▋   | 38/57 [00:18<00:08,  2.24it/s]
+Encoding:  68%|██████▊   | 39/57 [00:18<00:08,  2.22it/s]
+Encoding:  70%|███████   | 40/57 [00:19<00:07,  2.22it/s]
+Encoding:  72%|███████▏  | 41/57 [00:19<00:07,  2.22it/s]
+Encoding:  74%|███████▎  | 42/57 [00:19<00:06,  2.21it/s]
+Encoding:  75%|███████▌  | 43/57 [00:20<00:06,  2.21it/s]
+Encoding:  77%|███████▋  | 44/57 [00:20<00:05,  2.21it/s]
+Encoding:  79%|███████▉  | 45/57 [00:21<00:05,  2.21it/s]
+Encoding:  81%|████████  | 46/57 [00:21<00:04,  2.21it/s]
+Encoding:  82%|████████▏ | 47/57 [00:22<00:04,  2.22it/s]
+Encoding:  84%|████████▍ | 48/57 [00:22<00:04,  2.22it/s]
+Encoding:  86%|████████▌ | 49/57 [00:23<00:03,  2.24it/s]
+Encoding:  88%|████████▊ | 50/57 [00:23<00:03,  2.24it/s]
+Encoding:  89%|████████▉ | 51/57 [00:23<00:02,  2.25it/s]
+Encoding:  91%|█████████ | 52/57 [00:24<00:02,  2.24it/s]
+Encoding:  93%|█████████▎| 53/57 [00:24<00:01,  2.22it/s]
+Encoding:  95%|█████████▍| 54/57 [00:25<00:01,  2.22it/s]
+Encoding:  96%|█████████▋| 55/57 [00:25<00:00,  2.22it/s]
+Encoding:  98%|█████████▊| 56/57 [00:26<00:00,  2.20it/s]
+Encoding: 100%|██████████| 57/57 [00:26<00:00,  2.37it/s]
+Encoding: 100%|██████████| 57/57 [00:26<00:00,  2.15it/s]
+INFO:state._cli._emb._transform:Embedding computation completed successfully!
+已写 /data2/zengjh/301/Macrophages/Macrophages_RC_ouput/Macrophages_RC_after_se.h5ad
+已写 /data2/zengjh/301/Macrophages/Macrophages_RC_ouput/Macrophages_RC_01_hvgPCA_PC12_Batch.png
+2026-03-24 15:20:37,431 - harmonypy - INFO - Running Harmony (PyTorch on cuda)
+2026-03-24 15:20:37,431 - harmonypy - INFO -   Parameters:
+2026-03-24 15:20:37,431 - harmonypy - INFO -     max_iter_harmony: 20
+2026-03-24 15:20:37,431 - harmonypy - INFO -     max_iter_kmeans: 20
+2026-03-24 15:20:37,431 - harmonypy - INFO -     epsilon_cluster: 1e-05
+2026-03-24 15:20:37,431 - harmonypy - INFO -     epsilon_harmony: 0.0001
+2026-03-24 15:20:37,431 - harmonypy - INFO -     nclust: 45
+2026-03-24 15:20:37,431 - harmonypy - INFO -     block_size: 0.05
+2026-03-24 15:20:37,432 - harmonypy - INFO -     lamb: [1.]
+2026-03-24 15:20:37,432 - harmonypy - INFO -     theta: [2.]
+2026-03-24 15:20:37,432 - harmonypy - INFO -     sigma: [0.1 0.1 0.1 0.1 0.1]...
+2026-03-24 15:20:37,432 - harmonypy - INFO -     verbose: True
+2026-03-24 15:20:37,432 - harmonypy - INFO -     random_state: 0
+2026-03-24 15:20:37,432 - harmonypy - INFO -   Data: 50 PCs × 1362 cells
+2026-03-24 15:20:37,432 - harmonypy - INFO -   Batch variables: ['Batch']
+2026-03-24 15:20:37,782 - harmonypy - INFO - Computing initial centroids with sklearn.KMeans...
+2026-03-24 15:20:37,835 - harmonypy - INFO - KMeans initialization complete.
+2026-03-24 15:20:38,031 - harmonypy - INFO - Iteration 1 of 20
+2026-03-24 15:20:38,472 - harmonypy - INFO - Iteration 2 of 20
+2026-03-24 15:20:38,749 - harmonypy - INFO - Iteration 3 of 20
+2026-03-24 15:20:39,025 - harmonypy - INFO - Iteration 4 of 20
+2026-03-24 15:20:39,306 - harmonypy - INFO - Iteration 5 of 20
+2026-03-24 15:20:39,416 - harmonypy - INFO - Converged after 5 iterations
+已写 /data2/zengjh/301/Macrophages/Macrophages_RC_ouput/Macrophages_RC_02_state_PC12_Batch.png
+已写 /data2/zengjh/301/Macrophages/Macrophages_RC_ouput/Macrophages_RC_03_harmony_PC12_Batch.png
+已写 /data2/zengjh/301/Macrophages/Macrophages_RC_ouput/Macrophages_RC_state_emb.h5ad

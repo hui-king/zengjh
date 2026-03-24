@@ -1,0 +1,175 @@
+=== 2026-03-24T13:16:13.384602 ===
+input: /data2/zengjh/301/Ciliated Cells/Ciliated Cells/Ciliated Cells_RC.h5ad
+output_dir: /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput
+command: /data2/zengjh/conda/envs/cell/bin/python /data2/zengjh/301/run_se_pca.py --state-root /data2/zengjh/301/state-main --input /data2/zengjh/301/Ciliated Cells/Ciliated Cells/Ciliated Cells_RC.h5ad --output-dir /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput --checkpoint /data2/zengjh/301/se600m_epoch4.ckpt --model-folder /data2/zengjh/301 --protein-embeddings /data2/zengjh/301/protein_embeddings.pt
+
+读取 /data2/zengjh/301/Ciliated Cells/Ciliated Cells/Ciliated Cells_RC.h5ad ...
+Running: /data2/zengjh/conda/envs/cell/bin/python -m state emb transform --input /tmp/se_emb_0lusgjab/Ciliated Cells_RC_prep_emb.h5ad --output /tmp/se_emb_0lusgjab/Ciliated Cells_RC_emb_out.h5ad --embed-key X_state --checkpoint /data2/zengjh/301/se600m_epoch4.ckpt --model-folder /data2/zengjh/301 --protein-embeddings /data2/zengjh/301/protein_embeddings.pt
+INFO:state._cli._emb._transform:Using model checkpoint: /data2/zengjh/301/se600m_epoch4.ckpt
+INFO:state._cli._emb._transform:Creating inference object
+INFO:state._cli._emb._transform:Using protein embeddings override: /data2/zengjh/301/protein_embeddings.pt
+INFO:state._cli._emb._transform:Loading model from checkpoint: /data2/zengjh/301/se600m_epoch4.ckpt
+INFO:state._cli._emb._transform:Created output directory: /tmp/se_emb_0lusgjab
+INFO:state._cli._emb._transform:Computing embeddings for /tmp/se_emb_0lusgjab/Ciliated Cells_RC_prep_emb.h5ad
+INFO:state._cli._emb._transform:Output will be saved to /tmp/se_emb_0lusgjab/Ciliated Cells_RC_emb_out.h5ad
+INFO:state.emb.inference:Auto-detected gene column: var.index (overlap: 1491/19790 protein embeddings, 100.0% of genes)
+INFO:/data2/zengjh/301/state-main/src/state/emb/data/loader.py:1491 genes mapped to embedding file (out of 1491)
+!!! 1491 genes mapped to embedding file (out of 1491)
+
+Encoding:   0%|          | 0/126 [00:00<?, ?it/s]
+Encoding:   1%|          | 1/126 [00:01<02:53,  1.39s/it]
+Encoding:   2%|▏         | 2/126 [00:01<01:44,  1.19it/s]
+Encoding:   2%|▏         | 3/126 [00:02<01:21,  1.51it/s]
+Encoding:   3%|▎         | 4/126 [00:02<01:10,  1.72it/s]
+Encoding:   4%|▍         | 5/126 [00:03<01:05,  1.86it/s]
+Encoding:   5%|▍         | 6/126 [00:03<01:00,  1.97it/s]
+Encoding:   6%|▌         | 7/126 [00:04<00:58,  2.03it/s]
+Encoding:   6%|▋         | 8/126 [00:04<00:56,  2.07it/s]
+Encoding:   7%|▋         | 9/126 [00:05<00:55,  2.11it/s]
+Encoding:   8%|▊         | 10/126 [00:05<00:54,  2.13it/s]
+Encoding:   9%|▊         | 11/126 [00:05<00:53,  2.16it/s]
+Encoding:  10%|▉         | 12/126 [00:06<00:52,  2.19it/s]
+Encoding:  10%|█         | 13/126 [00:06<00:51,  2.20it/s]
+Encoding:  11%|█         | 14/126 [00:07<00:50,  2.21it/s]
+Encoding:  12%|█▏        | 15/126 [00:07<00:50,  2.22it/s]
+Encoding:  13%|█▎        | 16/126 [00:08<00:49,  2.22it/s]
+Encoding:  13%|█▎        | 17/126 [00:08<00:49,  2.21it/s]
+Encoding:  14%|█▍        | 18/126 [00:09<00:49,  2.20it/s]
+Encoding:  15%|█▌        | 19/126 [00:09<00:48,  2.19it/s]
+Encoding:  16%|█▌        | 20/126 [00:10<00:48,  2.19it/s]
+Encoding:  17%|█▋        | 21/126 [00:10<00:47,  2.19it/s]
+Encoding:  17%|█▋        | 22/126 [00:10<00:47,  2.18it/s]
+Encoding:  18%|█▊        | 23/126 [00:11<00:47,  2.18it/s]
+Encoding:  19%|█▉        | 24/126 [00:11<00:46,  2.18it/s]
+Encoding:  20%|█▉        | 25/126 [00:12<00:45,  2.20it/s]
+Encoding:  21%|██        | 26/126 [00:12<00:45,  2.21it/s]
+Encoding:  21%|██▏       | 27/126 [00:13<00:44,  2.22it/s]
+Encoding:  22%|██▏       | 28/126 [00:13<00:44,  2.22it/s]
+Encoding:  23%|██▎       | 29/126 [00:14<00:43,  2.24it/s]
+Encoding:  24%|██▍       | 30/126 [00:14<00:43,  2.23it/s]
+Encoding:  25%|██▍       | 31/126 [00:14<00:42,  2.21it/s]
+Encoding:  25%|██▌       | 32/126 [00:15<00:42,  2.21it/s]
+Encoding:  26%|██▌       | 33/126 [00:15<00:42,  2.20it/s]
+Encoding:  27%|██▋       | 34/126 [00:16<00:41,  2.20it/s]
+Encoding:  28%|██▊       | 35/126 [00:16<00:41,  2.19it/s]
+Encoding:  29%|██▊       | 36/126 [00:17<00:41,  2.19it/s]
+Encoding:  29%|██▉       | 37/126 [00:17<00:40,  2.19it/s]
+Encoding:  30%|███       | 38/126 [00:18<00:43,  2.01it/s]
+Encoding:  31%|███       | 39/126 [00:18<00:42,  2.06it/s]
+Encoding:  32%|███▏      | 40/126 [00:19<00:40,  2.11it/s]
+Encoding:  33%|███▎      | 41/126 [00:19<00:39,  2.14it/s]
+Encoding:  33%|███▎      | 42/126 [00:20<00:38,  2.17it/s]
+Encoding:  34%|███▍      | 43/126 [00:20<00:37,  2.20it/s]
+Encoding:  35%|███▍      | 44/126 [00:21<00:37,  2.20it/s]
+Encoding:  36%|███▌      | 45/126 [00:21<00:36,  2.19it/s]
+Encoding:  37%|███▋      | 46/126 [00:21<00:36,  2.19it/s]
+Encoding:  37%|███▋      | 47/126 [00:22<00:36,  2.19it/s]
+Encoding:  38%|███▊      | 48/126 [00:22<00:35,  2.19it/s]
+Encoding:  39%|███▉      | 49/126 [00:23<00:35,  2.19it/s]
+Encoding:  40%|███▉      | 50/126 [00:23<00:34,  2.18it/s]
+Encoding:  40%|████      | 51/126 [00:24<00:34,  2.18it/s]
+Encoding:  41%|████▏     | 52/126 [00:24<00:33,  2.19it/s]
+Encoding:  42%|████▏     | 53/126 [00:25<00:33,  2.20it/s]
+Encoding:  43%|████▎     | 54/126 [00:25<00:32,  2.21it/s]
+Encoding:  44%|████▎     | 55/126 [00:26<00:32,  2.22it/s]
+Encoding:  44%|████▍     | 56/126 [00:26<00:31,  2.22it/s]
+Encoding:  45%|████▌     | 57/126 [00:26<00:31,  2.23it/s]
+Encoding:  46%|████▌     | 58/126 [00:27<00:30,  2.21it/s]
+Encoding:  47%|████▋     | 59/126 [00:27<00:30,  2.20it/s]
+Encoding:  48%|████▊     | 60/126 [00:28<00:30,  2.20it/s]
+Encoding:  48%|████▊     | 61/126 [00:28<00:29,  2.20it/s]
+Encoding:  49%|████▉     | 62/126 [00:29<00:29,  2.19it/s]
+Encoding:  50%|█████     | 63/126 [00:29<00:28,  2.19it/s]
+Encoding:  51%|█████     | 64/126 [00:30<00:28,  2.19it/s]
+Encoding:  52%|█████▏    | 65/126 [00:30<00:27,  2.19it/s]
+Encoding:  52%|█████▏    | 66/126 [00:31<00:27,  2.20it/s]
+Encoding:  53%|█████▎    | 67/126 [00:31<00:26,  2.21it/s]
+Encoding:  54%|█████▍    | 68/126 [00:31<00:26,  2.21it/s]
+Encoding:  55%|█████▍    | 69/126 [00:32<00:25,  2.22it/s]
+Encoding:  56%|█████▌    | 70/126 [00:32<00:25,  2.23it/s]
+Encoding:  56%|█████▋    | 71/126 [00:33<00:24,  2.22it/s]
+Encoding:  57%|█████▋    | 72/126 [00:33<00:24,  2.21it/s]
+Encoding:  58%|█████▊    | 73/126 [00:34<00:24,  2.21it/s]
+Encoding:  59%|█████▊    | 74/126 [00:34<00:23,  2.20it/s]
+Encoding:  60%|█████▉    | 75/126 [00:35<00:23,  2.19it/s]
+Encoding:  60%|██████    | 76/126 [00:35<00:22,  2.19it/s]
+Encoding:  61%|██████    | 77/126 [00:36<00:22,  2.19it/s]
+Encoding:  62%|██████▏   | 78/126 [00:36<00:21,  2.18it/s]
+Encoding:  63%|██████▎   | 79/126 [00:36<00:21,  2.19it/s]
+Encoding:  63%|██████▎   | 80/126 [00:37<00:20,  2.20it/s]
+Encoding:  64%|██████▍   | 81/126 [00:37<00:20,  2.22it/s]
+Encoding:  65%|██████▌   | 82/126 [00:38<00:19,  2.22it/s]
+Encoding:  66%|██████▌   | 83/126 [00:38<00:19,  2.22it/s]
+Encoding:  67%|██████▋   | 84/126 [00:39<00:18,  2.23it/s]
+Encoding:  67%|██████▋   | 85/126 [00:39<00:18,  2.21it/s]
+Encoding:  68%|██████▊   | 86/126 [00:40<00:18,  2.20it/s]
+Encoding:  69%|██████▉   | 87/126 [00:40<00:17,  2.19it/s]
+Encoding:  70%|██████▉   | 88/126 [00:41<00:18,  2.01it/s]
+Encoding:  71%|███████   | 89/126 [00:41<00:18,  2.04it/s]
+Encoding:  71%|███████▏  | 90/126 [00:42<00:17,  2.08it/s]
+Encoding:  72%|███████▏  | 91/126 [00:42<00:16,  2.12it/s]
+Encoding:  73%|███████▎  | 92/126 [00:42<00:15,  2.13it/s]
+Encoding:  74%|███████▍  | 93/126 [00:43<00:15,  2.16it/s]
+Encoding:  75%|███████▍  | 94/126 [00:43<00:14,  2.19it/s]
+Encoding:  75%|███████▌  | 95/126 [00:44<00:14,  2.21it/s]
+Encoding:  76%|███████▌  | 96/126 [00:44<00:13,  2.21it/s]
+Encoding:  77%|███████▋  | 97/126 [00:45<00:13,  2.22it/s]
+Encoding:  78%|███████▊  | 98/126 [00:45<00:12,  2.22it/s]
+Encoding:  79%|███████▊  | 99/126 [00:46<00:12,  2.21it/s]
+Encoding:  79%|███████▉  | 100/126 [00:46<00:11,  2.20it/s]
+Encoding:  80%|████████  | 101/126 [00:47<00:11,  2.19it/s]
+Encoding:  81%|████████  | 102/126 [00:47<00:10,  2.19it/s]
+Encoding:  82%|████████▏ | 103/126 [00:47<00:10,  2.19it/s]
+Encoding:  83%|████████▎ | 104/126 [00:48<00:10,  2.19it/s]
+Encoding:  83%|████████▎ | 105/126 [00:48<00:09,  2.19it/s]
+Encoding:  84%|████████▍ | 106/126 [00:49<00:09,  2.19it/s]
+Encoding:  85%|████████▍ | 107/126 [00:49<00:08,  2.20it/s]
+Encoding:  86%|████████▌ | 108/126 [00:50<00:08,  2.21it/s]
+Encoding:  87%|████████▋ | 109/126 [00:50<00:07,  2.22it/s]
+Encoding:  87%|████████▋ | 110/126 [00:51<00:07,  2.22it/s]
+Encoding:  88%|████████▊ | 111/126 [00:51<00:06,  2.23it/s]
+Encoding:  89%|████████▉ | 112/126 [00:52<00:06,  2.21it/s]
+Encoding:  90%|████████▉ | 113/126 [00:52<00:05,  2.21it/s]
+Encoding:  90%|█████████ | 114/126 [00:52<00:05,  2.20it/s]
+Encoding:  91%|█████████▏| 115/126 [00:53<00:05,  2.19it/s]
+Encoding:  92%|█████████▏| 116/126 [00:53<00:04,  2.19it/s]
+Encoding:  93%|█████████▎| 117/126 [00:54<00:04,  2.18it/s]
+Encoding:  94%|█████████▎| 118/126 [00:54<00:03,  2.18it/s]
+Encoding:  94%|█████████▍| 119/126 [00:55<00:03,  2.18it/s]
+Encoding:  95%|█████████▌| 120/126 [00:55<00:02,  2.19it/s]
+Encoding:  96%|█████████▌| 121/126 [00:56<00:02,  2.20it/s]
+Encoding:  97%|█████████▋| 122/126 [00:56<00:01,  2.21it/s]
+Encoding:  98%|█████████▊| 123/126 [00:57<00:01,  2.21it/s]
+Encoding:  98%|█████████▊| 124/126 [00:57<00:00,  2.19it/s]
+Encoding:  99%|█████████▉| 125/126 [00:58<00:00,  2.05it/s]
+Encoding: 100%|██████████| 126/126 [00:58<00:00,  2.65it/s]
+Encoding: 100%|██████████| 126/126 [00:58<00:00,  2.17it/s]
+INFO:state._cli._emb._transform:Embedding computation completed successfully!
+已写 /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput/Ciliated Cells_RC_after_se.h5ad
+已写 /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput/Ciliated Cells_RC_01_hvgPCA_PC12_Batch.png
+2026-03-24 13:21:31,186 - harmonypy - INFO - Running Harmony (PyTorch on cuda)
+2026-03-24 13:21:31,186 - harmonypy - INFO -   Parameters:
+2026-03-24 13:21:31,187 - harmonypy - INFO -     max_iter_harmony: 20
+2026-03-24 13:21:31,187 - harmonypy - INFO -     max_iter_kmeans: 20
+2026-03-24 13:21:31,187 - harmonypy - INFO -     epsilon_cluster: 1e-05
+2026-03-24 13:21:31,187 - harmonypy - INFO -     epsilon_harmony: 0.0001
+2026-03-24 13:21:31,187 - harmonypy - INFO -     nclust: 100
+2026-03-24 13:21:31,187 - harmonypy - INFO -     block_size: 0.05
+2026-03-24 13:21:31,187 - harmonypy - INFO -     lamb: [1.]
+2026-03-24 13:21:31,187 - harmonypy - INFO -     theta: [2.]
+2026-03-24 13:21:31,187 - harmonypy - INFO -     sigma: [0.1 0.1 0.1 0.1 0.1]...
+2026-03-24 13:21:31,187 - harmonypy - INFO -     verbose: True
+2026-03-24 13:21:31,187 - harmonypy - INFO -     random_state: 0
+2026-03-24 13:21:31,187 - harmonypy - INFO -   Data: 50 PCs × 3005 cells
+2026-03-24 13:21:31,187 - harmonypy - INFO -   Batch variables: ['Batch']
+2026-03-24 13:21:31,558 - harmonypy - INFO - Computing initial centroids with sklearn.KMeans...
+2026-03-24 13:21:31,645 - harmonypy - INFO - KMeans initialization complete.
+2026-03-24 13:21:31,843 - harmonypy - INFO - Iteration 1 of 20
+2026-03-24 13:21:32,431 - harmonypy - INFO - Iteration 2 of 20
+2026-03-24 13:21:32,853 - harmonypy - INFO - Iteration 3 of 20
+2026-03-24 13:21:33,278 - harmonypy - INFO - Iteration 4 of 20
+2026-03-24 13:21:33,644 - harmonypy - INFO - Iteration 5 of 20
+2026-03-24 13:21:33,954 - harmonypy - INFO - Converged after 5 iterations
+已写 /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput/Ciliated Cells_RC_02_state_PC12_Batch.png
+已写 /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput/Ciliated Cells_RC_03_harmony_PC12_Batch.png
+已写 /data2/zengjh/301/Ciliated Cells/Ciliated Cells_RC_ouput/Ciliated Cells_RC_state_emb.h5ad
