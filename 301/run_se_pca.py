@@ -2,6 +2,7 @@
 """
 SE embedding pipeline: 清洗 h5ad → `python -m state emb transform` →
 HVG sklearn PCA（图 01）→ X_state PCA（图 02）→ harmonypy Harmony（图 03）。
+图默认保存为 .svg；散点层在 SVG 内栅格化（嵌入位图），图例与坐标轴仍为矢量。
 """
 from __future__ import annotations
 
@@ -135,7 +136,13 @@ def _plot_scatter(
     sns.move_legend(ax, "upper left", bbox_to_anchor=(1.02, 1), title=legend_title, frameon=False)
     fig.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    fmt = out_path.suffix.lower().removeprefix(".") or "png"
+    # SVG/PDF 中散点量极大时文件臃肿；栅格化散点层，图例与坐标轴仍为矢量
+    if fmt in ("svg", "pdf", "eps"):
+        for coll in ax.collections:
+            coll.set_rasterized(True)
+    save_kw: dict = {"bbox_inches": "tight", "dpi": 150}
+    fig.savefig(out_path, format=fmt, **save_kw)
     plt.close(fig)
 
 
@@ -310,7 +317,7 @@ def main(argv: list[str] | None = None) -> int:
         z01 = mat[:, :2].copy()
         xl01, yl01 = "PC1", "PC2"
 
-    p01 = out_dir / f"{base}_01_hvgPCA_PC12_{bk_slug}.png"
+    p01 = out_dir / f"{base}_01_hvgPCA_PC12_{bk_slug}.svg"
     _plot_scatter(
         z01[:, 0],
         z01[:, 1],
@@ -335,7 +342,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.unify_emb_pca_harmony_axes:
         xlim, ylim = _unified_limits(Z[:, :2], Z_h[:, :2])
 
-    p02 = out_dir / f"{base}_02_state_PC12_{bk_slug}.png"
+    p02 = out_dir / f"{base}_02_state_PC12_{bk_slug}.svg"
     _plot_scatter(
         Z[:, 0],
         Z[:, 1],
@@ -350,7 +357,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     print(f"已写 {p02}", flush=True)
 
-    p03 = out_dir / f"{base}_03_harmony_PC12_{bk_slug}.png"
+    p03 = out_dir / f"{base}_03_harmony_PC12_{bk_slug}.svg"
     _plot_scatter(
         Z_h[:, 0],
         Z_h[:, 1],

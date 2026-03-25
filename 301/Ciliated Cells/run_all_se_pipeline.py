@@ -5,10 +5,10 @@
 跳过路径中包含 *_ouput 的文件。每个 h5ad 输出到：本目录下 `{basename}_ouput/`。
 
 环境变量（可选）:
-  PYTHON              — Python 解释器
-  STATE_CHECKPOINT    — 传给 --checkpoint
+  PYTHON              — Python 解释器（默认尝试 /data2/zengjh/conda/envs/cell/bin/python）
+  STATE_CHECKPOINT    — 传给 --checkpoint（未设且存在则用 DIR_301/se600m_epoch4.ckpt）
   STATE_MODEL_FOLDER  — 传给 --model-folder
-  STATE_PROTEIN_EMB   — 传给 --protein-embeddings
+  STATE_PROTEIN_EMB   — 传给 --protein-embeddings（未设且存在则用 DIR_301/protein_embeddings.pt）
   STATE_EMB_BATCH_SIZE — 传给 --embed-batch-size
 """
 from __future__ import annotations
@@ -31,6 +31,10 @@ else:
 
 RUN_SE_PCA = os.path.join(DIR_301, "run_se_pca.py")
 STATE_MAIN = os.path.join(DIR_301, "state-main")
+
+# 与本仓库 301/ 目录下的 SE 资源对齐；子目录内运行脚本时 DIR_301 仍指向 301/
+_DEFAULT_SE_CKPT = os.path.join(DIR_301, "se600m_epoch4.ckpt")
+_DEFAULT_SE_PROTEIN = os.path.join(DIR_301, "protein_embeddings.pt")
 
 _DEFAULT_CELL = "/data2/zengjh/conda/envs/cell/bin/python"
 
@@ -64,6 +68,12 @@ def _extra_args() -> list[str]:
     mf = os.environ.get("STATE_MODEL_FOLDER", "").strip()
     pe = os.environ.get("STATE_PROTEIN_EMB", "").strip()
     bs = os.environ.get("STATE_EMB_BATCH_SIZE", "").strip()
+    if not ck and not mf and os.path.isfile(_DEFAULT_SE_CKPT):
+        ck = _DEFAULT_SE_CKPT
+        print(f"使用默认 SE 权重: {ck}", file=sys.stderr)
+    if not pe and os.path.isfile(_DEFAULT_SE_PROTEIN):
+        pe = _DEFAULT_SE_PROTEIN
+        print(f"使用默认蛋白嵌入: {pe}", file=sys.stderr)
     if ck:
         args.extend(["--checkpoint", ck])
     if mf:
@@ -74,7 +84,7 @@ def _extra_args() -> list[str]:
         args.extend(["--embed-batch-size", bs])
     if not ck and not mf:
         print(
-            "警告: 未设置 STATE_CHECKPOINT 或 STATE_MODEL_FOLDER，"
+            "警告: 未设置 STATE_CHECKPOINT/STATE_MODEL_FOLDER，且未找到默认 se600m_epoch4.ckpt；"
             "run_se_pca.py 将报错。",
             file=sys.stderr,
         )
@@ -93,7 +103,7 @@ def _verify_outputs(base: str, out_dir: str, batch_key: str) -> list[str]:
         if not os.path.isfile(f):
             missing.append(f)
     for idx in ("01", "02", "03"):
-        pat = os.path.join(out_dir, f"{base}_{idx}_*_{bk}.png")
+        pat = os.path.join(out_dir, f"{base}_{idx}_*_{bk}.svg")
         if not glob.glob(pat):
             missing.append(pat)
     return missing
