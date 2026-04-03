@@ -1,0 +1,29 @@
+{
+  "input": "/home/yang/work_dir/zjh/state-squidiff/data/RC.h5ad",
+  "label_column": "celltype",
+  "pre_se": {
+    "n_clusters": 8,
+    "ARI": 0.8047991533745419,
+    "NMI": 0.7958452169150334,
+    "embedding": "X_pca",
+    "shape": [
+      13378,
+      50
+    ]
+  },
+  "post_se": {
+    "n_clusters": 8,
+    "ARI": 0.7321808397460307,
+    "NMI": 0.7587898570937829,
+    "embedding": "X_state",
+    "shape": [
+      13378,
+      2048
+    ]
+  },
+  "outputs": {
+    "pre_pca_svg": "/home/yang/work_dir/zjh/state-squidiff/data/RCoutput/RC_preSE_pca.svg",
+    "post_pca_svg": "/home/yang/work_dir/zjh/state-squidiff/data/RCoutput/RC_postSE_pca.svg",
+    "compare_svg": "/home/yang/work_dir/zjh/state-squidiff/data/RCoutput/RC_ari_nmi_compare.svg"
+  }
+}
