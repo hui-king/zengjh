@@ -1,0 +1,52 @@
+{
+  "input": "data/Ctrl.h5ad",
+  "label_column": "celltype",
+  "metric_subset": {
+    "target_celltypes": [
+      "Ciliated Cells",
+      "Club Cells",
+      "Macrophages",
+      "T cells"
+    ],
+    "present_in_data": [
+      "Ciliated Cells",
+      "Club Cells",
+      "Macrophages",
+      "T cells"
+    ],
+    "n_cells": 118779
+  },
+  "metric_space": {
+    "pre_metrics_transform": "none",
+    "post_metrics_transform": "none",
+    "metrics_scale_max": 10.0,
+    "note": "KMeans/ARI/NMI/AMI use cells whose label is in the target four types only; k = number of those types present. 2D PCA figures use all cells; non-target types are shown as 'Other' (#c0c0c0). Gene-level scale before PCA is unchanged."
+  },
+  "pre_se": {
+    "n_clusters": 4,
+    "ARI": 0.2145961036388121,
+    "NMI": 0.3986513883149823,
+    "AMI": 0.3986008743499833,
+    "embedding": "X_pca",
+    "shape": [
+      118779,
+      50
+    ]
+  },
+  "post_se": {
+    "n_clusters": 4,
+    "ARI": 0.1305862765582635,
+    "NMI": 0.31292532705217474,
+    "AMI": 0.31287669234492343,
+    "embedding": "X_state",
+    "shape": [
+      118779,
+      2048
+    ]
+  },
+  "outputs": {
+    "pre_pca_svg": "/home/yang/work_dir/zjh/state-squidiff/data/newCtrloutput/Ctrl_preSE_pca.svg",
+    "post_pca_svg": "/home/yang/work_dir/zjh/state-squidiff/data/newCtrloutput/Ctrl_postSE_pca.svg",
+    "compare_svg": "/home/yang/work_dir/zjh/state-squidiff/data/newCtrloutput/Ctrl_metrics_compare.svg"
+  }
+}
